@@ -1,0 +1,502 @@
+[
+  {
+    "word": "namas",
+    "translation": "дом",
+    "cls": "as"
+  },
+  {
+    "word": "darbas",
+    "translation": "работа",
+    "cls": "as"
+  },
+  {
+    "word": "miestas",
+    "translation": "город",
+    "cls": "as"
+  },
+  {
+    "word": "bankas",
+    "translation": "банк",
+    "cls": "as"
+  },
+  {
+    "word": "parkas",
+    "translation": "парк",
+    "cls": "as"
+  },
+  {
+    "word": "tiltas",
+    "translation": "мост",
+    "cls": "as"
+  },
+  {
+    "word": "teatras",
+    "translation": "театр",
+    "cls": "as"
+  },
+  {
+    "word": "restoranas",
+    "translation": "ресторан",
+    "cls": "as"
+  },
+  {
+    "word": "adresas",
+    "translation": "адрес",
+    "cls": "as"
+  },
+  {
+    "word": "telefonas",
+    "translation": "телефон",
+    "cls": "as"
+  },
+  {
+    "word": "studentas",
+    "translation": "студент",
+    "cls": "as"
+  },
+  {
+    "word": "draugas",
+    "translation": "друг",
+    "cls": "as"
+  },
+  {
+    "word": "kaimynas",
+    "translation": "сосед",
+    "cls": "as"
+  },
+  {
+    "word": "tėvas",
+    "translation": "отец",
+    "cls": "as"
+  },
+  {
+    "word": "vyras",
+    "translation": "мужчина",
+    "cls": "as"
+  },
+  {
+    "word": "vaikas",
+    "translation": "ребёнок",
+    "cls": "as"
+  },
+  {
+    "word": "sūnėnas",
+    "translation": "племянник",
+    "cls": "as"
+  },
+  {
+    "word": "agurkas",
+    "translation": "огурец",
+    "cls": "as"
+  },
+  {
+    "word": "pomidoras",
+    "translation": "помидор",
+    "cls": "as"
+  },
+  {
+    "word": "bananas",
+    "translation": "банан",
+    "cls": "as"
+  },
+  {
+    "word": "apelsinas",
+    "translation": "апельсин",
+    "cls": "as"
+  },
+  {
+    "word": "kopūstas",
+    "translation": "капуста",
+    "cls": "as"
+  },
+  {
+    "word": "česnakas",
+    "translation": "чеснок",
+    "cls": "as"
+  },
+  {
+    "word": "moliūgas",
+    "translation": "тыква",
+    "cls": "as"
+  },
+  {
+    "word": "pyragas",
+    "translation": "пирог",
+    "cls": "as"
+  },
+  {
+    "word": "jogurtas",
+    "translation": "йогурт",
+    "cls": "as"
+  },
+  {
+    "word": "šokoladas",
+    "translation": "шоколад",
+    "cls": "as"
+  },
+  {
+    "word": "sviestas",
+    "translation": "масло",
+    "cls": "as"
+  },
+  {
+    "word": "vanduo",
+    "translation": "вода",
+    "cls": "as"
+  },
+  {
+    "word": "kambarys",
+    "translation": "комната",
+    "cls": "as"
+  },
+  {
+    "word": "brolis",
+    "translation": "брат",
+    "cls": "is"
+  },
+  {
+    "word": "senelis",
+    "translation": "дедушка",
+    "cls": "is"
+  },
+  {
+    "word": "pirmadienis",
+    "translation": "понедельник",
+    "cls": "is"
+  },
+  {
+    "word": "antradienis",
+    "translation": "вторник",
+    "cls": "is"
+  },
+  {
+    "word": "trečiadienis",
+    "translation": "среда",
+    "cls": "is"
+  },
+  {
+    "word": "ketvirtadienis",
+    "translation": "четверг",
+    "cls": "is"
+  },
+  {
+    "word": "penktadienis",
+    "translation": "пятница",
+    "cls": "is"
+  },
+  {
+    "word": "viešbutis",
+    "translation": "гостиница",
+    "cls": "is"
+  },
+  {
+    "word": "bendrabutis",
+    "translation": "общежитие",
+    "cls": "is"
+  },
+  {
+    "word": "sumuštinis",
+    "translation": "бутерброд",
+    "cls": "is"
+  },
+  {
+    "word": "kiaušinis",
+    "translation": "яйцо",
+    "cls": "is"
+  },
+  {
+    "word": "burokėlis",
+    "translation": "свёкла",
+    "cls": "is"
+  },
+  {
+    "word": "maišelis",
+    "translation": "пакет",
+    "cls": "is"
+  },
+  {
+    "word": "gabalėlis",
+    "translation": "кусочек",
+    "cls": "is"
+  },
+  {
+    "word": "kokteilis",
+    "translation": "коктейль",
+    "cls": "is"
+  },
+  {
+    "word": "mama",
+    "translation": "мама",
+    "cls": "a"
+  },
+  {
+    "word": "knyga",
+    "translation": "книга",
+    "cls": "a"
+  },
+  {
+    "word": "mokykla",
+    "translation": "школа",
+    "cls": "a"
+  },
+  {
+    "word": "biblioteka",
+    "translation": "библиотека",
+    "cls": "a"
+  },
+  {
+    "word": "ambasada",
+    "translation": "посольство",
+    "cls": "a"
+  },
+  {
+    "word": "gatvė",
+    "translation": "улица",
+    "cls": "a"
+  },
+  {
+    "word": "kavinė",
+    "translation": "кафе",
+    "cls": "a"
+  },
+  {
+    "word": "parduotuvė",
+    "translation": "магазин",
+    "cls": "a"
+  },
+  {
+    "word": "vaistinė",
+    "translation": "аптека",
+    "cls": "a"
+  },
+  {
+    "word": "ligoninė",
+    "translation": "больница",
+    "cls": "a"
+  },
+  {
+    "word": "savaitė",
+    "translation": "неделя",
+    "cls": "a"
+  },
+  {
+    "word": "diena",
+    "translation": "день",
+    "cls": "a"
+  },
+  {
+    "word": "valanda",
+    "translation": "час",
+    "cls": "a"
+  },
+  {
+    "word": "šeima",
+    "translation": "семья",
+    "cls": "a"
+  },
+  {
+    "word": "žmona",
+    "translation": "жена",
+    "cls": "a"
+  },
+  {
+    "word": "teta",
+    "translation": "тётя",
+    "cls": "a"
+  },
+  {
+    "word": "morka",
+    "translation": "морковь",
+    "cls": "a"
+  },
+  {
+    "word": "bulvė",
+    "translation": "картошка",
+    "cls": "a"
+  },
+  {
+    "word": "citrina",
+    "translation": "лимон",
+    "cls": "a"
+  },
+  {
+    "word": "kriaušė",
+    "translation": "груша",
+    "cls": "a"
+  },
+  {
+    "word": "duona",
+    "translation": "хлеб",
+    "cls": "a"
+  },
+  {
+    "word": "mėsa",
+    "translation": "мясо",
+    "cls": "a"
+  },
+  {
+    "word": "kava",
+    "translation": "кофе",
+    "cls": "a"
+  },
+  {
+    "word": "arbata",
+    "translation": "чай",
+    "cls": "a"
+  },
+  {
+    "word": "sriuba",
+    "translation": "суп",
+    "cls": "a"
+  },
+  {
+    "word": "druska",
+    "translation": "соль",
+    "cls": "a"
+  },
+  {
+    "word": "sąskaita",
+    "translation": "счёт",
+    "cls": "a"
+  },
+  {
+    "word": "kaina",
+    "translation": "цена",
+    "cls": "a"
+  },
+  {
+    "word": "upė",
+    "translation": "река",
+    "cls": "a"
+  },
+  {
+    "word": "jūra",
+    "translation": "море",
+    "cls": "a"
+  },
+  {
+    "word": "sūnus",
+    "translation": "сын",
+    "cls": "us"
+  },
+  {
+    "word": "turgus",
+    "translation": "рынок",
+    "cls": "us"
+  },
+  {
+    "word": "medus",
+    "translation": "мёд",
+    "cls": "us"
+  },
+  {
+    "word": "cukrus",
+    "translation": "сахар",
+    "cls": "us"
+  },
+  {
+    "word": "dangus",
+    "translation": "небо",
+    "cls": "us"
+  },
+  {
+    "word": "lietus",
+    "translation": "дождь",
+    "cls": "us"
+  },
+  {
+    "word": "muziejus",
+    "translation": "музей",
+    "cls": "ius"
+  },
+  {
+    "word": "profesorius",
+    "translation": "профессор",
+    "cls": "ius"
+  },
+  {
+    "word": "vaisius",
+    "translation": "фрукт",
+    "cls": "ius"
+  },
+  {
+    "word": "sesuo",
+    "translation": "сестра",
+    "cls": "irreg"
+  },
+  {
+    "word": "duktė",
+    "translation": "дочь",
+    "cls": "irreg"
+  },
+  {
+    "word": "moteris",
+    "translation": "женщина",
+    "cls": "irreg"
+  },
+  {
+    "word": "šuo",
+    "translation": "собака",
+    "cls": "irreg"
+  },
+  {
+    "word": "žmogus",
+    "translation": "человек",
+    "cls": "irreg"
+  },
+  {
+    "word": "stotis",
+    "translation": "станция",
+    "cls": "irreg"
+  },
+  {
+    "word": "pilis",
+    "translation": "замок",
+    "cls": "irreg"
+  },
+  {
+    "word": "žuvis",
+    "translation": "рыба",
+    "cls": "irreg"
+  },
+  {
+    "word": "naktis",
+    "translation": "ночь",
+    "cls": "irreg"
+  },
+  {
+    "word": "centras",
+    "translation": "центр",
+    "cls": "as"
+  },
+  {
+    "word": "paštas",
+    "translation": "почта",
+    "cls": "as"
+  },
+  {
+    "word": "biuras",
+    "translation": "офис",
+    "cls": "as"
+  },
+  {
+    "word": "kioskas",
+    "translation": "киоск",
+    "cls": "as"
+  },
+  {
+    "word": "sodas",
+    "translation": "сад",
+    "cls": "as"
+  },
+  {
+    "word": "stalas",
+    "translation": "стол",
+    "cls": "as"
+  },
+  {
+    "word": "rytas",
+    "translation": "утро",
+    "cls": "as"
+  }
+]
