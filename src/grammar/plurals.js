@@ -1,22 +1,78 @@
-// Автономный набор для раздела «Количество».
-// ruForms нужны, чтобы русское задание тоже было грамматически правильным.
-export const PLURAL_DEMO_ITEMS = [
-  { noun:'bananas', gender:'m', ruForms:{one:'жёлтый банан',few:'жёлтых банана',many:'жёлтых бананов'}, nounForms:{acc_sg:'bananą',acc_pl:'bananus',gen_pl:'bananų'}, adjectiveForms:{acc_sg:'geltoną',acc_pl:'geltonus',gen_pl:'geltonų'} },
-  { noun:'arbūzas', gender:'m', ruForms:{one:'большой арбуз',few:'больших арбуза',many:'больших арбузов'}, nounForms:{acc_sg:'arbūzą',acc_pl:'arbūzus',gen_pl:'arbūzų'}, adjectiveForms:{acc_sg:'didelį',acc_pl:'didelius',gen_pl:'didelių'} },
-  { noun:'obuolys', gender:'m', ruForms:{one:'зелёное яблоко',few:'зелёных яблока',many:'зелёных яблок'}, nounForms:{acc_sg:'obuolį',acc_pl:'obuolius',gen_pl:'obuolių'}, adjectiveForms:{acc_sg:'žalią',acc_pl:'žalius',gen_pl:'žalių'} },
-  { noun:'knyga', gender:'f', ruForms:{one:'новую книгу',few:'новые книги',many:'новых книг'}, nounForms:{acc_sg:'knygą',acc_pl:'knygas',gen_pl:'knygų'}, adjectiveForms:{acc_sg:'naują',acc_pl:'naujas',gen_pl:'naujų'} },
-  { noun:'mašina', gender:'f', ruForms:{one:'красную машину',few:'красные машины',many:'красных машин'}, nounForms:{acc_sg:'mašiną',acc_pl:'mašinas',gen_pl:'mašinų'}, adjectiveForms:{acc_sg:'raudoną',acc_pl:'raudonas',gen_pl:'raudonų'} },
+// Конструкции определяют падеж всей группы:
+// patinka / nepatinka -> именительный (это грамматический субъект)
+// noriu / mėgstu / turiu -> винительный (прямое дополнение)
+// nenoriu / nemėgstu / neturiu -> родительный из-за отрицания
+export const CONSTRUCTIONS = [
+  { id:'patinka', lt:'Man patinka', ruOne:'Мне нравится', ruMany:'Мне нравятся', caseId:'nom', caseRu:'именительный', question:'kas?' },
+  { id:'nepatinka', lt:'Man nepatinka', ruOne:'Мне не нравится', ruMany:'Мне не нравятся', caseId:'nom', caseRu:'именительный', question:'kas?' },
+  { id:'megstu', lt:'Aš mėgstu', ruOne:'Я люблю', ruMany:'Я люблю', caseId:'acc', caseRu:'винительный', question:'ką?' },
+  { id:'nemegstu', lt:'Aš nemėgstu', ruOne:'Я не люблю', ruMany:'Я не люблю', caseId:'gen', caseRu:'родительный', question:'ko?' },
+  { id:'noriu', lt:'Aš noriu', ruOne:'Я хочу', ruMany:'Я хочу', caseId:'acc', caseRu:'винительный', question:'ką?' },
+  { id:'nenoriu', lt:'Aš nenoriu', ruOne:'Я не хочу', ruMany:'Я не хочу', caseId:'gen', caseRu:'родительный', question:'ko?' },
+  { id:'turiu', lt:'Aš turiu', ruOne:'У меня есть', ruMany:'У меня есть', caseId:'acc', caseRu:'винительный', question:'ką?' },
+  { id:'neturiu', lt:'Aš neturiu', ruOne:'У меня нет', ruMany:'У меня нет', caseId:'gen', caseRu:'родительный', question:'ko?' },
 ];
 
 const NUMERALS = {
-  1:{m:'vieną',f:'vieną'},2:{m:'du',f:'dvi'},3:{m:'tris',f:'tris'},4:{m:'keturis',f:'keturias'},5:{m:'penkis',f:'penkias'},6:{m:'šešis',f:'šešias'},7:{m:'septynis',f:'septynias'},8:{m:'aštuonis',f:'aštuonias'},9:{m:'devynis',f:'devynias'},10:{m:'dešimt',f:'dešimt'},11:{m:'vienuolika',f:'vienuolika'},12:{m:'dvylika',f:'dvylika'},13:{m:'trylika',f:'trylika'},14:{m:'keturiolika',f:'keturiolika'},15:{m:'penkiolika',f:'penkiolika'},16:{m:'šešiolika',f:'šešiolika'},17:{m:'septyniolika',f:'septyniolika'},18:{m:'aštuoniolika',f:'aštuoniolika'},19:{m:'devyniolika',f:'devyniolika'},20:{m:'dvidešimt',f:'dvidešimt'}
+  1:{nom:{m:'vienas',f:'viena'},acc:{m:'vieną',f:'vieną'},gen:{m:'vieno',f:'vienos'}},
+  2:{nom:{m:'du',f:'dvi'},acc:{m:'du',f:'dvi'},gen:{m:'dviejų',f:'dviejų'}},
+  3:{nom:{m:'trys',f:'trys'},acc:{m:'tris',f:'tris'},gen:{m:'trijų',f:'trijų'}},
+  4:{nom:{m:'keturi',f:'keturios'},acc:{m:'keturis',f:'keturias'},gen:{m:'keturių',f:'keturių'}},
+  5:{nom:{m:'penki',f:'penkios'},acc:{m:'penkis',f:'penkias'},gen:{m:'penkių',f:'penkių'}},
+  6:{nom:{m:'šeši',f:'šešios'},acc:{m:'šešis',f:'šešias'},gen:{m:'šešių',f:'šešių'}},
+  7:{nom:{m:'septyni',f:'septynios'},acc:{m:'septynis',f:'septynias'},gen:{m:'septynių',f:'septynių'}},
+  8:{nom:{m:'aštuoni',f:'aštuonios'},acc:{m:'aštuonis',f:'aštuonias'},gen:{m:'aštuonių',f:'aštuonių'}},
+  9:{nom:{m:'devyni',f:'devynios'},acc:{m:'devynis',f:'devynias'},gen:{m:'devynių',f:'devynių'}},
+  10:{nom:'dešimt',acc:'dešimt',gen:'dešimties'},
+  11:{nom:'vienuolika',acc:'vienuolika',gen:'vienuolikos'},
+  12:{nom:'dvylika',acc:'dvylika',gen:'dvylikos'},
+  13:{nom:'trylika',acc:'trylika',gen:'trylikos'},
+  14:{nom:'keturiolika',acc:'keturiolika',gen:'keturiolikos'},
+  15:{nom:'penkiolika',acc:'penkiolika',gen:'penkiolikos'},
+  16:{nom:'šešiolika',acc:'šešiolika',gen:'šešiolikos'},
+  17:{nom:'septyniolika',acc:'septyniolika',gen:'septyniolikos'},
+  18:{nom:'aštuoniolika',acc:'aštuoniolika',gen:'aštuoniolikos'},
+  19:{nom:'devyniolika',acc:'devyniolika',gen:'devyniolikos'},
+  20:{nom:'dvidešimt',acc:'dvidešimt',gen:'dvidešimties'},
 };
-export const quantityPattern=n=>n===1?'acc_sg':n<=9?'acc_pl':'gen_pl';
-export const russianQuantityPattern=n=>n===1?'one':n<=4?'few':'many';
-export function buildQuantityAnswer(item,number){const p=quantityPattern(number);return `${NUMERALS[number][item.gender]} ${item.adjectiveForms[p]} ${item.nounForms[p]}`;}
-export function buildRussianPrompt(item,number){return `Я хочу ${number} ${item.ruForms[russianQuantityPattern(number)]}.`;}
-export const QUANTITY_HINTS=[
- {range:'1',number:'vieną',adjective:'вин. ед.',noun:'вин. ед.',example:'vieną didelį arbūzą'},
- {range:'2–9',number:'du / tris / keturis…',adjective:'вин. мн.',noun:'вин. мн.',example:'tris didelius arbūzus'},
- {range:'10–20',number:'dešimt / vienuolika…',adjective:'род. мн.',noun:'род. мн.',example:'dešimt didelių arbūzų'},
+
+export const PLURAL_DEMO_ITEMS = [
+  { gender:'m', ru:{nomOne:'большой арбуз',accOne:'большой арбуз',few:'больших арбуза',many:'больших арбузов'}, forms:{nom_sg:['didelis','arbūzas'],nom_pl:['dideli','arbūzai'],acc_sg:['didelį','arbūzą'],acc_pl:['didelius','arbūzus'],gen_sg:['didelio','arbūzo'],gen_pl:['didelių','arbūzų']} },
+  { gender:'m', ru:{nomOne:'жёлтый банан',accOne:'жёлтый банан',few:'жёлтых банана',many:'жёлтых бананов'}, forms:{nom_sg:['geltonas','bananas'],nom_pl:['geltoni','bananai'],acc_sg:['geltoną','bananą'],acc_pl:['geltonus','bananus'],gen_sg:['geltono','banano'],gen_pl:['geltonų','bananų']} },
+  { gender:'m', ru:{nomOne:'зелёное яблоко',accOne:'зелёное яблоко',few:'зелёных яблока',many:'зелёных яблок'}, forms:{nom_sg:['žalias','obuolys'],nom_pl:['žali','obuoliai'],acc_sg:['žalią','obuolį'],acc_pl:['žalius','obuolius'],gen_sg:['žalio','obuolio'],gen_pl:['žalių','obuolių']} },
+  { gender:'f', ru:{nomOne:'новая книга',accOne:'новую книгу',few:'новые книги',many:'новых книг'}, forms:{nom_sg:['nauja','knyga'],nom_pl:['naujos','knygos'],acc_sg:['naują','knygą'],acc_pl:['naujas','knygas'],gen_sg:['naujos','knygos'],gen_pl:['naujų','knygų']} },
+  { gender:'f', ru:{nomOne:'красная машина',accOne:'красную машину',few:'красные машины',many:'красных машин'}, forms:{nom_sg:['raudona','mašina'],nom_pl:['raudonos','mašinos'],acc_sg:['raudoną','mašiną'],acc_pl:['raudonas','mašinas'],gen_sg:['raudonos','mašinos'],gen_pl:['raudonų','mašinų']} },
+];
+
+function numeralForm(number,caseId,gender){const value=NUMERALS[number]?.[caseId];return typeof value==='string'?value:value?.[gender];}
+function formKey(number,caseId){
+  if(caseId==='gen')return number===1?'gen_sg':'gen_pl';
+  if(number>=10)return'gen_pl';
+  if(caseId==='nom')return number===1?'nom_sg':'nom_pl';
+  return number===1?'acc_sg':'acc_pl';
+}
+function russianObject(item,number,construction){
+  if(number===1){
+    if(construction.caseId==='nom')return item.ru.nomOne;
+    return item.ru.accOne;
+  }
+  return number>=2&&number<=4?item.ru.few:item.ru.many;
+}
+export function buildExercise(item,number,construction){
+ const key=formKey(number,construction.caseId);
+ const [adjective,noun]=item.forms[key];
+ return{
+   answer:`${numeralForm(number,construction.caseId,item.gender)} ${adjective} ${noun}`,
+   russian:`${number===1?construction.ruOne:construction.ruMany} ${number} ${russianObject(item,number,construction)}.`,
+   lithuanian:`${construction.lt} ___ ___ ___.`,
+   formKey:key,
+ };
+}
+
+export const CONSTRUCTION_HINTS = [
+ {construction:'Man patinka / nepatinka',case:'Именительный',question:'kas?',example:'trys dideli arbūzai'},
+ {construction:'Aš noriu / mėgstu / turiu',case:'Винительный',question:'ką?',example:'tris didelius arbūzus'},
+ {construction:'Aš nenoriu / nemėgstu / neturiu',case:'Родительный',question:'ko?',example:'trijų didelių arbūzų'},
+ {construction:'10–20 в утверждении',case:'Родительный мн. у слов',question:'ko?',example:'dešimt didelių arbūzų'},
+ {construction:'10–20 после отрицания',case:'Родительный всей группы',question:'ko?',example:'dešimties didelių arbūzų'},
 ];
