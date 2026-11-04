@@ -1,21 +1,18 @@
-# v10 — Количество и глаголы без нового vocab.json
+# PluralTrainer v10.2
 
-Добавлены автономные модули:
-- `trainers/PluralTrainer.jsx`
-- `trainers/VerbsTrainer.jsx`
-- `grammar/numerals.js`
-- `grammar/adjectives.js`
-- `grammar/plurals.js`
-- `grammar/verbs.js`
-- `styles-v10.css`
-- обновлённый `main.jsx`
+Заменить:
+- src/trainers/PluralTrainer.jsx
+- src/grammar/plurals.js
 
-Текущие `vocab.json`, `WordsTrainer.jsx`, `CasesTrainer.jsx`, `nouns.js`, `styles.css` не заменяются.
+Добавить:
+- src/styles-v10-2.css
 
-## Установка
-1. Заменить `src/main.jsx`.
-2. Добавить новые файлы в `src/trainers/` и `src/grammar/`.
-3. Добавить `src/styles-v10.css`.
-4. Commit changes.
+И в src/main.jsx после строки:
+import './styles-v10.css';
+добавить:
+import './styles-v10-2.css';
 
-Новые модули используют собственный небольшой проверенный набор, поэтому не зависят от будущего большого vocabulary.
+Конструкции:
+- Man patinka / nepatinka -> именительный
+- Aš mėgstu / noriu / turiu -> винительный
+- Aš nemėgstu / nenoriu / neturiu -> родительный
