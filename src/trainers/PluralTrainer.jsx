@@ -1,32 +1,14 @@
-import React, { useMemo, useState } from 'react';
-import { Dices, SkipForward } from 'lucide-react';
-import { PLURAL_DEMO_ITEMS, buildQuantityAnswer } from '../grammar/plurals';
-import { normalizeAnswer, shuffle } from '../utils/text';
-
-export default function PluralTrainer({ onResult, onSkip }) {
-  const [deck, setDeck] = useState(() => shuffle(PLURAL_DEMO_ITEMS));
-  const [index, setIndex] = useState(0);
-  const [number, setNumber] = useState(() => 1 + Math.floor(Math.random() * 20));
-  const [input, setInput] = useState('');
-  const [status, setStatus] = useState('idle');
-  const item = deck[index % deck.length];
-  const answer = useMemo(() => buildQuantityAnswer(item, number), [item, number]);
-
-  const next = () => {
-    setIndex((value) => (value + 1) % deck.length);
-    setNumber(1 + Math.floor(Math.random() * 20));
-    setInput('');
-    setStatus('idle');
-  };
-  const reshuffle = () => { setDeck(shuffle(PLURAL_DEMO_ITEMS)); setIndex(0); setNumber(1 + Math.floor(Math.random() * 20)); setInput(''); setStatus('idle'); };
-  const skip = () => { onSkip(); next(); };
-  const submit = (event) => {
-    event.preventDefault();
-    if (!input.trim() || status !== 'idle') return;
-    const correct = normalizeAnswer(input) === normalizeAnswer(answer);
-    setStatus(correct ? 'good' : 'bad');
-    onResult(correct);
-  };
-
-  return <div className="layout"><aside><h3>КОНСТРУКЦИЯ</h3><div className="note"><b>Число + прилагательное + существительное</b><br />Число меняется в каждом задании.</div></aside><section className="card"><div className="tools"><button title="Перемешать" onClick={reshuffle}><Dices /></button><button title="Другое задание, серия сбросится" onClick={skip}><SkipForward /></button></div><div className="moduleHero"><span>Множественное число</span><b>{number}</b></div><div className="prompt promptSentence">Я хочу {number} {item.ruAdjective} {item.ruNoun}.</div><div className="sub">Aš noriu ___ ___ ___.</div><form onSubmit={submit}><input autoFocus value={input} disabled={status !== 'idle'} onChange={(event) => setInput(event.target.value)} placeholder="Напиши число, прилагательное и существительное…" /><button disabled={!input.trim() || status !== 'idle'}>Проверить</button></form><div className="casehint">Пока это автономный демонстрационный набор. Полная лексика будет подключена позже.</div>{status !== 'idle' && <div className={'result ' + status}><b>{status === 'good' ? 'Правильно!' : 'Неверно'}</b><span>Ответ: <strong>{answer}</strong></span><button onClick={next}>Дальше</button></div>}</section></div>;
+import React,{useMemo,useState}from'react';
+import{Dices,HelpCircle,SkipForward,X}from'lucide-react';
+import{PLURAL_DEMO_ITEMS,QUANTITY_HINTS,buildQuantityAnswer,buildRussianPrompt}from'../grammar/plurals';
+import{normalizeAnswer,shuffle}from'../utils/text';
+export default function PluralTrainer({onResult,onSkip}){
+ const[deck,setDeck]=useState(()=>shuffle(PLURAL_DEMO_ITEMS)),[index,setIndex]=useState(0),[number,setNumber]=useState(()=>1+Math.floor(Math.random()*20)),[input,setInput]=useState(''),[status,setStatus]=useState('idle'),[hint,setHint]=useState(false);
+ const item=deck[index%deck.length],answer=useMemo(()=>buildQuantityAnswer(item,number),[item,number]),prompt=buildRussianPrompt(item,number);
+ const reset=()=>{setNumber(1+Math.floor(Math.random()*20));setInput('');setStatus('idle')};
+ const next=()=>{setIndex(v=>(v+1)%deck.length);reset()};
+ const reshuffle=()=>{setDeck(shuffle(PLURAL_DEMO_ITEMS));setIndex(0);reset()};
+ const skip=()=>{onSkip();next()};
+ const submit=e=>{e.preventDefault();if(!input.trim()||status!=='idle')return;const good=normalizeAnswer(input)===normalizeAnswer(answer);setStatus(good?'good':'bad');onResult(good)};
+ return <><div className="layout"><aside><h3>КОНСТРУКЦИЯ</h3><div className="note"><b>Число + прилагательное + существительное</b><br/>Все три части вводятся самостоятельно.</div><button className="tableBtn" onClick={()=>setHint(true)}><HelpCircle/>Окончания и правила</button></aside><section className="card"><div className="tools"><button title="Перемешать" onClick={reshuffle}><Dices/></button><button title="Другое задание, серия сбросится" onClick={skip}><SkipForward/></button></div><div className="moduleHero"><span>Количество</span><b>{number}</b></div><div className="prompt promptSentence">{prompt}</div><div className="sub">Aš noriu ___ ___ ___.</div><form onSubmit={submit}><input autoFocus value={input} disabled={status!=='idle'} onChange={e=>setInput(e.target.value)} placeholder="Число, прилагательное и существительное…"/><button disabled={!input.trim()||status!=='idle'}>Проверить</button></form>{status!=='idle'&&<div className={'result '+status}><b>{status==='good'?'Правильно!':'Неверно'}</b><span>Ответ: <strong>{answer}</strong></span><button onClick={next}>Дальше</button></div>}</section></div>{hint&&<div className="modal" onClick={()=>setHint(false)}><div className="modalBox" onClick={e=>e.stopPropagation()}><div className="modalHead"><h2>Числительные и окончания</h2><button onClick={()=>setHint(false)}><X/></button></div><div className="tableWrap"><table><thead><tr><th>Количество</th><th>Числительное</th><th>Прилагательное</th><th>Существительное</th><th>Пример</th></tr></thead><tbody>{QUANTITY_HINTS.map(x=><tr key={x.range}><td><b>{x.range}</b></td><td>{x.number}</td><td>{x.adjective}</td><td>{x.noun}</td><td>{x.example}</td></tr>)}</tbody></table></div></div></div>}</>;
 }
