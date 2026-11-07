@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { BookOpen, Brain, Languages, ListPlus, RotateCcw, Speech } from 'lucide-react';
 import rawVocab from './vocab.json';
 import './styles.css';
-import './styles-v10-2.css';
+import './styles-header-v11.css';
 import Stats from './components/Stats';
 import { buildCaseTasks } from './grammar/nouns';
 import CasesTrainer from './trainers/CasesTrainer';
