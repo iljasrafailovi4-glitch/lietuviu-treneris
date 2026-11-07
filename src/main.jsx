@@ -5,6 +5,7 @@ import { BookOpen, Brain, Languages, ListPlus, RotateCcw, Speech } from 'lucide-
 import rawVocab from './vocab.json';
 import './styles.css';
 import './styles-header-v11.css';
+import './styles-plural-v10-5.css';
 import Stats from './components/Stats';
 import { buildCaseTasks } from './grammar/nouns';
 import CasesTrainer from './trainers/CasesTrainer';
