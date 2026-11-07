@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import React, { useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BookOpen, Brain, Languages, ListPlus, RotateCcw, Speech } from 'lucide-react';
@@ -23,4 +24,9 @@ function App() {
   const common = { onResult: handleResult, onSkip: () => setStreak(0) };
   return <main><div className="shell"><header><div className="brand"><BookOpen /> LIETUVIŲ KALBA</div><h1>Литовский тренажёр</h1><p>Слова, падежи, количество и глаголы.</p><div className="switch switchFour"><button className={mode === 'vocab' ? 'on' : ''} onClick={() => setMode('vocab')}><Languages />Слова</button><button className={mode === 'cases' ? 'on' : ''} onClick={() => setMode('cases')}><Brain />Падежи</button><button className={mode === 'plural' ? 'on' : ''} onClick={() => setMode('plural')}><ListPlus />Количество</button><button className={mode === 'verbs' ? 'on' : ''} onClick={() => setMode('verbs')}><Speech />Глаголы</button></div></header><Stats ok={ok} bad={bad} streak={streak} best={best} />{mode === 'vocab' && <WordsTrainer entries={entries} {...common} />}{mode === 'cases' && <CasesTrainer tasks={caseTasks} {...common} />}{mode === 'plural' && <PluralTrainer {...common} />}{mode === 'verbs' && <VerbsTrainer {...common} />}<button className="reset" onClick={() => { setOk(0); setBad(0); setStreak(0); }}><RotateCcw />Сбросить статистику</button></div></main>;
 }
-createRoot(document.getElementById('root')).render(<App />);
+createRoot(document.getElementById('root')).render(
+  <>
+    <App />
+    <Analytics />
+  </>
+);
